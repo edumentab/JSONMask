@@ -142,10 +142,18 @@ multi sub evaluate(AST::Pattern $pattern, %data) {
     %scooped
 }
 
-sub mask(Str $mask, \data) is export {
-    with Mask.parse($mask, :actions(MaskActions.new)) {
-        my @*stack;
-        evaluate(.made, data)
+sub compile-mask(Str $mask) is export {
+    Mask.parse($mask, :actions(MaskActions.new))
+}
+
+multi sub mask(Mask $pattern, \data) is export {
+    my @*stack;
+    evaluate($pattern.made, data)
+}
+
+multi sub mask($mask, \data) is export {
+    with compile-mask($mask) {
+        mask($_, data);
     } else {
         die "Unable to parse JSON Mask";
     }

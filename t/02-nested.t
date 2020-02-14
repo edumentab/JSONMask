@@ -13,6 +13,8 @@ is-deeply mask('a(b(c(d)))', %(a => %(b => %(c => %(d => 0))))),
 is-deeply mask('-a,b(c,d)', %(a => 1, b => %(a => 1, b => 2, c => 3, d => 4), c => 3)),
         %(b => %(c => 3, d => 4), c => 3);
 
+is-deeply mask('a(b,c)', %()), %();
+
 throws-like { mask('a()', %()) },
         Exception, message => /"Invalid empty nested rule"/;
 
