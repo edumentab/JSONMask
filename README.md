@@ -32,7 +32,7 @@ You can of course combine them:
 mask('-password,profile(name,email)');
 ```
 
-If you reuse masks, you can pre-compile them:
+If you want to reuse masks, you can pre-compile them:
 
 ```perl6
 my $mask = compile-mask('a,b,c');
