@@ -1,9 +1,9 @@
 {
   "name": "JSON::Mask",
-  "description": "Write me!",
-  "version": "0.1",
+  "description": "JSON filtering",
+  "version": "1.0",
   "perl": "6.*",
-  "auth": "Write me!",
+  "auth": "edument",
   "depends": [],
   "build-depends": [],
   "test-depends": [],
@@ -11,6 +11,6 @@
     "JSON::Mask": "lib/JSON/Mask.pm6"
   },
   "resources": [],
-  "license": "Write me!",
-  "source-url": "Write me!"
+  "license": "Artistic-2.0",
+  "source-url": "https://github.com/edumentab/JSONMask"
 }
