@@ -34,6 +34,14 @@ You can of course combine them:
 mask('-password,profile(name,email)', %data);
 ```
 
+You can quote a key if it contains "special" characters:
+
+```perl6
+# Select everything but `password` and `password-confirmation`.
+mask('-password,-"password-confirmation"', %data);
+```
+
+
 ### Compilation
 
 If you want to reuse masks, you can pre-compile them:
